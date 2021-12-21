@@ -19,7 +19,7 @@
   "autoload": {
     "psr-4": {
       "Modules\\": "src",
-      "Duxravel\\Article\\Seeders\\": "database/seeders"
+      "Duxravel\\Cms\\Seeders\\": "database/seeders"
     }
   },
   "extra": {
@@ -32,11 +32,11 @@
     },
     "duxravel": {
       "route": [
-        "src/Article/Route/AuthAdmin.php",
-        "src/Article/Route/Web.php"
+        "src/Cms/Route/AuthAdmin.php",
+        "src/Cms/Route/Web.php"
       ],
       "menu": [
-        "src/Article/Menu/Admin.php"
+        "src/Cms/Menu/Admin.php"
       ]
     }
   },
