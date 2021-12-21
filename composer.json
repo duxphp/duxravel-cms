@@ -1,0 +1,48 @@
+{
+  "name": "duxphp/duxravel-cms",
+  "description": "Duxravel CMS Application",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "DuxPHP",
+      "email": "admin@duxphp.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "duxphp/duxravel-app": "*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\": "src",
+      "Duxravel\\Article\\Seeders\\": "database/seeders"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+    },
+    "laravel": {
+      "providers": [
+        "Modules\\Cms\\Providers\\CmsServiceProvider"
+      ]
+    },
+    "duxravel": {
+      "route": [
+        "src/Article/Route/AuthAdmin.php",
+        "src/Article/Route/Web.php"
+      ],
+      "menu": [
+        "src/Article/Menu/Admin.php"
+      ]
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "preferred-install": "dist"
+  }
+}
