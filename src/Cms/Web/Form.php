@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Tools\Web;
+namespace Modules\Cms\Web;
 
 use Modules\Article\Resource\ArticleCollection;
 use Modules\Cms\Web\Base;
