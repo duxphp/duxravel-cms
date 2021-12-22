@@ -19,9 +19,9 @@ Route::group([
         'prefix' => 'form',
         'group' => '自定义表单'
     ], function () {
-        Route::get('list/{id}', ['uses' => 'Modules\Tools\Web\Form@index', 'desc' => '列表'])->name('web.form.list');
-        Route::get('info/{id}', ['uses' => 'Modules\Tools\Web\Form@info', 'desc' => '详情'])->name('web.form.info');
-        Route::post('push/{id}', ['uses' => 'Modules\Tools\Web\Form@push', 'desc' => '发布'])->name('web.form.push');
+        Route::get('list/{id}', ['uses' => 'Modules\Cms\Web\Form@index', 'desc' => '列表'])->name('web.form.list');
+        Route::get('info/{id}', ['uses' => 'Modules\Cms\Web\Form@info', 'desc' => '详情'])->name('web.form.info');
+        Route::post('push/{id}', ['uses' => 'Modules\Cms\Web\Form@push', 'desc' => '发布'])->name('web.form.push');
     });
 
 });
