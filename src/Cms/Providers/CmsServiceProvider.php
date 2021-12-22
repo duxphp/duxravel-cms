@@ -2,6 +2,8 @@
 
 namespace Modules\Cms\Providers;
 
+use Modules\Cms\Middleware\Web;
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +17,13 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // 注册主题配置
+        $this->mergeConfigFrom(__DIR__ . '/../Config/Theme.php', 'theme');
+
+
+        // 注册中间件
+        $kernel = $this->app->make(Kernel::class);
+        $kernel->appendMiddlewareToGroup(Web::class);
     }
 
     /**
