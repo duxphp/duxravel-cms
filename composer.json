@@ -37,6 +37,9 @@
       ],
       "menu": [
         "src/Cms/Menu/Admin.php"
+      ],
+      "listener": [
+        "Modules\\Cms\\Listeners\\ManageForm"
       ]
     }
   },
