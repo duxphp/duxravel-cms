@@ -35,5 +35,9 @@ class CmsServiceProvider extends ServiceProvider
     {
         \Duxravel\Core\Util\Blade::make('marker', \Modules\Cms\Service\Blade::class, 'mark');
         \Duxravel\Core\Util\Blade::loopMake('menu', \Modules\Cms\Service\Blade::class, 'menu');
+
+        $this->booted(function () {
+            Route::get('/', [\Modules\Cms\Web\Index::class, 'index'])->middleware('web')->name('web.index');
+        });
     }
 }
