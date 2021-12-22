@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [\Module\Cms\Web\Index::class, 'index'])->middleware('web')->name('web.index');
+Route::get('/', [\Modules\Cms\Web\Index::class, 'index'])->middleware('web')->name('web.index');
 
 Route::group([
     'app' => '内容管理'
