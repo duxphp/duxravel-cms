@@ -3,7 +3,7 @@
 namespace Modules\Tools\Web;
 
 use Modules\Article\Resource\ArticleCollection;
-use Duxravel\Core\Web\Base;
+use Modules\Cms\Web\Base;
 
 class Form extends Base
 {
