@@ -23,7 +23,7 @@ class CmsServiceProvider extends ServiceProvider
 
         // 注册中间件
         $kernel = $this->app->make(Kernel::class);
-        $kernel->appendMiddlewareToGroup(Web::class);
+        $kernel->appendMiddlewareToGroup('web', Web::class);
     }
 
     /**
