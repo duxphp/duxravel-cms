@@ -49,7 +49,7 @@ class Form extends Base
 
         $lastInfo = \Duxravel\Core\Model\FormData::latest()->first();
 
-        if ($lastInfo->create_time->lt($formInfo['Interval'])) {
+        if ($lastInfo->created_at->lt($formInfo['Interval'])) {
             app_error('提交太快了，请稍等');
         }
 
