@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateToolsMenuTable extends Migration
+class CreateCmsMenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateToolsMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('tools_menu', function (Blueprint $table) {
+        Schema::create('cms_menu', function (Blueprint $table) {
             $table->increments('menu_id');
             $table->char('name', 50)->nullable()->default('')->comment('菜单名称');
-            $table->integer('create_time');
-            $table->integer('update_time');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +27,6 @@ class CreateToolsMenuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tools_menu');
+        Schema::dropIfExists('cms_menu');
     }
 }

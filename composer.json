@@ -39,6 +39,7 @@
         "src/Cms/Menu/Admin.php"
       ],
       "listener": [
+        "Modules\\Cms\\Listeners\\InstallSeed",
         "Modules\\Cms\\Listeners\\ManageForm"
       ]
     }

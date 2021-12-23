@@ -39,5 +39,8 @@ class CmsServiceProvider extends ServiceProvider
         $this->booted(function () {
             Route::get('/', [\Modules\Cms\Web\Index::class, 'index'])->middleware('web')->name('web.index');
         });
+
+        // 注册数据库目录
+        $this->loadMigrationsFrom(realpath(__DIR__ . '/../../../database/migrations'));
     }
 }
