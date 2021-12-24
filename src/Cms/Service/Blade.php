@@ -41,18 +41,31 @@ class Blade
      */
     public static function menu(array $args = [])
     {
+        return Menu::list($args);
+    }
+
+    /**
+     * 菜单标签
+     * @param array $args
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection|\Kalnoy\Nestedset\Collection|\Modules\Tools\Model\ToolsMenuItems[]
+     */
+    public static function form(array $args = [])
+    {
         $params = [
-            'parent' => $args['parent'] ?: 0,
             'id' => $args['id'] ?: 1,
             'limit' => (int)$args['limit'] ?: 10,
+            'page' => (bool)$args['page'],
         ];
-        $data = new \Modules\Cms\Model\CmsMenuItems();
-        $data = $data->scoped(['menu_id' => $params['id']])->defaultOrder();
+        $data = new \Duxravel\Core\Model\FormData();
+        $data = $data->where('status', 1);
 
-        if ($params['parent']) {
-            $data = $data->where('item_id', $params['parent'])->first()->descendants()->get()->toTree()->take($params['limit']);
+        if ($params['id']) {
+            $data = $data->where('form_id', $params['id']);
+        }
+        if ($params['page']) {
+            $data = $data->paginate($params['limit']);
         } else {
-            $data = $data->get()->toTree()->take($params['limit']);
+            $data = $data->limit($params['limit'])->get();
         }
         return $data;
 

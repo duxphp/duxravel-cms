@@ -33,7 +33,8 @@
     "duxravel": {
       "route": [
         "src/Cms/Route/AuthAdmin.php",
-        "src/Cms/Route/Web.php"
+        "src/Cms/Route/Web.php",
+        "src/Cms/Route/Api.php"
       ],
       "menu": [
         "src/Cms/Menu/Admin.php"

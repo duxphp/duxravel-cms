@@ -17,6 +17,7 @@ class CreateCmsTagsTable extends Migration
             $table->increments('tag_id');
             $table->string('name')->nullable();
             $table->integer('count')->nullable();
+            $table->integer('view')->nullable();
             $table->timestamps();
         });
     }

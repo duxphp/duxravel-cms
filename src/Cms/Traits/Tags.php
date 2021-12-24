@@ -87,6 +87,7 @@ trait Tags
             $tagInfo = new CmsTags;
             $tagInfo->name = $tagName;
             $tagInfo->count = 1;
+            $tagInfo->view = 1;
             $tagInfo->save();
             $tagId = $tagInfo->tag_id;
         }
