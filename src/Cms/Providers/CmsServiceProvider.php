@@ -43,5 +43,10 @@ class CmsServiceProvider extends ServiceProvider
 
         // 注册数据库目录
         $this->loadMigrationsFrom(realpath(__DIR__ . '/../../../database/migrations'));
+
+
+        $this->publishes([
+            __DIR__.'/../../../theme' => public_path('theme'),
+        ], 'duxravel-theme');
     }
 }
