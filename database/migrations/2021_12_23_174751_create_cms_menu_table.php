@@ -15,7 +15,7 @@ class CreateCmsMenuTable extends Migration
     {
         Schema::create('cms_menu', function (Blueprint $table) {
             $table->increments('menu_id');
-            $table->char('name', 50)->nullable()->default('')->comment('菜单名称');
+            $table->char('name', 50)->nullable()->comment('菜单名称');
             $table->timestamps();
         });
     }

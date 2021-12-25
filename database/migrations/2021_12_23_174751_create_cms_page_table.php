@@ -15,10 +15,10 @@ class CreateCmsPageTable extends Migration
     {
         Schema::create('cms_page', function (Blueprint $table) {
             $table->increments('page_id');
-            $table->char('name', 50)->nullable()->default('')->comment('页面名称');
-            $table->string('keywords')->nullable()->default('')->comment('页面关键词');
-            $table->string('description')->nullable()->default('')->comment('页面描述');
-            $table->string('tpl')->nullable()->default('')->comment('模板名称');
+            $table->char('name', 50)->nullable()->comment('页面名称');
+            $table->string('keywords')->nullable()->comment('页面关键词');
+            $table->string('description')->nullable()->comment('页面描述');
+            $table->string('tpl')->nullable()->comment('模板名称');
             $table->timestamps();
         });
     }

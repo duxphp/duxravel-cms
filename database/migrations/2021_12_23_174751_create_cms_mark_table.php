@@ -15,8 +15,8 @@ class CreateCmsMarkTable extends Migration
     {
         Schema::create('cms_mark', function (Blueprint $table) {
             $table->increments('mark_id');
-            $table->char('name', 250)->nullable()->comment('名称');
-            $table->char('type', 20)->default('')->comment('类型');
+            $table->char('name', 255)->nullable()->comment('名称');
+            $table->char('type', 20)->comment('类型');
             $table->text('content')->nullable()->comment('内容');
             $table->timestamps();
         });
