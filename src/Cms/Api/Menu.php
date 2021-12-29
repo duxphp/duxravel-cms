@@ -1,13 +1,9 @@
 <?php
 
-namespace Duxravel\Core\Api;
+namespace Modules\Cms\Api;
 
 use Duxravel\Core\Api\Api;
-use Duxravel\Core\Resource\MenuItemsCollection;
-use Modules\Article\Resource\TagsCollection;
-use Duxravel\Core\Resource\FormDataCollection;
-use Duxravel\Core\Resource\FormDataResource;
-use Duxravel\Core\Resource\FormResource;
+use Modules\Cms\Resource\MenuItemsCollection;
 
 class Menu extends Api
 {
@@ -17,7 +13,7 @@ class Menu extends Api
         $args = request()->all();
         $args['id'] = $id;
         $data = \Modules\Cms\Service\Menu::list($args);
-        return $this->success(new MenuItemsCollection($res));
+        return $this->success(new MenuItemsCollection($data));
     }
 
 }

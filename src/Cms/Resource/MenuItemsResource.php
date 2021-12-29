@@ -1,6 +1,6 @@
 <?php
 
-namespace Duxravel\Core\Resource;
+namespace Modules\Cms\Resource;
 
 use Duxravel\Core\Resource\BaseResource;
 
