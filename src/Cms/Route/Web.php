@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+// 网站首页默认路由（可自定义覆盖）
+Route::get('/', [\Modules\Cms\Web\Index::class, 'index'])->middleware('web')->name('web.index');
 
 Route::group([
     'app' => '内容管理'
